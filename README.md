@@ -1,6 +1,6 @@
-# Docker Compose to set up and run a Django/MariaDB/Redis app, with Pipenv.
+# A Docker Compose to set up and run a Django/MariaDB/Redis app, with Pipenv.
 
-First you need to install Django and create your project, for this run this command
+First you need to install Django and create your project.
 
 `./start.sh POJECT_NAME`
 
