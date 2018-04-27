@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    command: pipenv run python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/myproject
+    links:
+      - db:mariadb_host
+      - redis:redis_host
+    container_name: django_server
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6373:6373"
+    container_name: redis
+  db:
+    image: mariadb
+    container_name: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - "3306:3306"
+    container_name: mariadb
