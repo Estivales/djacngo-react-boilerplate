@@ -2,7 +2,6 @@ from python:3.6
 
 MAINTAINER estivaless@gmail.com
 
-# Project Files and Settings
 WORKDIR /app/
 COPY . /app/
 

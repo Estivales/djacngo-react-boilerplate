@@ -7,7 +7,7 @@ services:
     ports:
       - "8000:8000"
     volumes:
-      - .:/var/www/myproject
+      - .:/app/
     links:
       - db:mariadb_host
       - redis:redis_host
