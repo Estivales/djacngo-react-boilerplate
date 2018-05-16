@@ -33,9 +33,11 @@ INSTALLED_APPS = [
     'raven.contrib.django.raven_compat',
     'rest_framework',
     'knox',
-    'account'
+    'account',
+    'base'
 ]
 
+PAGE_CACHE_SECONDS = 1
 
 AUTH_USER_MODEL = 'account.User'
 
@@ -54,9 +56,7 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            "templates"
-        ],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,6 +68,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
@@ -120,16 +121,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles/")
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static/'),
+    os.path.join(BASE_DIR, 'static_dist/'),
 )
 
 RECORDS_PER_PAGE = 12

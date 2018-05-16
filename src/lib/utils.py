@@ -1,4 +1,4 @@
-from disposable_email_checker.validators import validate_disposable_email
+# from disposable_email_checker.validators import validate_disposable_email
 from django.core.exceptions import ValidationError
 from django.core.validators import validate_email as django_validate_email
 from django.db import transaction
@@ -15,12 +15,13 @@ def validate_email(value):
         return False
     else:
         # Check with the disposable list.
-        try:
-            validate_disposable_email(value)
-        except ValidationError:
-            return False
-        else:
-            return True
+        return True
+        # try:
+        #     validate_disposable_email(value)
+        # except ValidationError:
+        #     return False
+        # else:
+        #     return True
 
 
 class AtomicMixin(object):

@@ -1,13 +1,4 @@
-# A Docker Compose to set up and run a Django/MariaDB/Redis app, with Pipenv.
+# Django React Redis boilerplate
 
-First you need to docker-compose run to install django from the top level directory.
+This repository is a adaptation from the excelent https://github.com/Seedstars/django-react-redux-base
 
-`docker-compose run web pipenv install django`
-
-After that run the docker-compose command to start the new django project.
-
-`docker-compose run web pipenv run django-admin.py startproject PROJECT_NAME .`
-
-Run the docker-compose up command from the top level directory for your project.
-
-`docker-compose up`

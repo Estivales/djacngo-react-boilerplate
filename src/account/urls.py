@@ -5,15 +5,15 @@ import account.views
 
 urlpatterns = [
     url(_(r'^register/$'),
-        accounts.views.UserRegisterView.as_view(),
+        account.views.UserRegisterView.as_view(),
         name='register'),
     url(_(r'^login/$'),
-        accounts.views.UserLoginView.as_view(),
+        account.views.UserLoginView.as_view(),
         name='login'),
     url(_(r'^confirm/email/(?P<activation_key>.*)/$'),
-        accounts.views.UserConfirmEmailView.as_view(),
+        account.views.UserConfirmEmailView.as_view(),
         name='confirm_email'),
     url(_(r'^status/email/$'),
-        accounts.views.UserEmailConfirmationStatusView.as_view(),
+        account.views.UserEmailConfirmationStatusView.as_view(),
         name='status'),
 ]
