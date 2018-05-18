@@ -61,11 +61,11 @@ export function authLoginUser(email, password, redirect = '/') {
         const auth = btoa(`${email}:${password}`);
         return fetch(`${SERVER_URL}/api/v1/accounts/login/`, {
             method: 'post',
-            headers: {
+            headers: new Headers({
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
                 'Authorization': `Basic ${auth}`
-            }
+            }),
         })
             .then(checkHttpStatus)
             .then(parseJSON)
