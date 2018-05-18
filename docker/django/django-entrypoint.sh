@@ -12,5 +12,5 @@ do
     sleep 2
 done
 
-#python manage.py loaddata fixtures.json --settings=project.settings
+python manage.py loaddata fixtures.json --settings=project.settings
 python manage.py runserver 0.0.0.0:8000 --settings=project.settings

@@ -15,7 +15,7 @@ class IndexView(View):
 
     def get(self, request):
         """Return html for main application page."""
-
+        print("teste")
         abspath = open(os.path.join(settings.BASE_DIR, 'static_dist/index.html'), 'r')
         return HttpResponse(content=abspath.read())
 

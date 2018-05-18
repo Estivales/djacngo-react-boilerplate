@@ -1,16 +1,16 @@
 version: '2'
 
 services:
-    nginx:
-        image: nginx:1.11.6-alpine
-        container_name: nginx
-        restart: always
-        ports:
-            - 8000:8000
-        volumes:
-            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
-        volumes_from:
-            - backend
+#    nginx:
+#        image: nginx:1.11.6-alpine
+#        container_name: nginx
+#        restart: always
+#        ports:
+#            - 8000:8000
+#        volumes:
+#            - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+#        volumes_from:
+#            - backend
     mariadb:
         restart: always
         image: mariadb
@@ -37,8 +37,8 @@ services:
             - .:/django
         links:
             - mariadb
-        entrypoint:
-            - /django-entrypoint.sh
+#        entrypoint:
+#            - /django-entrypoint.sh
         ports:
             - "8000:8000"
         expose:

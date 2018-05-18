@@ -6,7 +6,6 @@ import { authLoginUserSuccess } from './actions/auth';
 import Root from './containers/Root/Root';
 import configureStore from './store/configureStore';
 
-
 const initialState = {};
 const target = document.getElementById('root');
 
